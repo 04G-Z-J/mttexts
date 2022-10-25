@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 创建普通html表单 -->
+    <form id="form">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="button" id="btn" value="提交">
+    </form>
+    <script type="text/javascript">
+        var form = document.getElementById('form');
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            // 将普通html表单转换成表单对象
+            var formData = new FormData(form); //formData() 只能放在send()中，所以下面是post方法
+            console.log(formData.get('username'));
+        }
+    </script>
+</body>
+
+</html>
